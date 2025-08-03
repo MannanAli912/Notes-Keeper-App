@@ -153,7 +153,6 @@ class _EditNoteScreenState extends State<EditNoteScreen>
           onPressed: () => Navigator.of(context).pop(),
         ),
         actions: [
-          // Pin/Unpin Button
           IconButton(
             icon: Icon(
               widget.note.isPinned
@@ -164,7 +163,6 @@ class _EditNoteScreenState extends State<EditNoteScreen>
             onPressed: _togglePin,
             tooltip: widget.note.isPinned ? 'Unpin Note' : 'Pin Note',
           ),
-          // Delete Button
           IconButton(
             icon: const Icon(Icons.delete_outline),
             onPressed: _deleteNote,
@@ -196,7 +194,6 @@ class _EditNoteScreenState extends State<EditNoteScreen>
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Pin Status Indicator
             if (widget.note.isPinned)
               Container(
                 padding:
