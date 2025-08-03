@@ -271,12 +271,12 @@ class NoteCard extends StatelessWidget {
 
   Color _getCardColor(int index) {
     final colors = [
-      const Color(0xFF4F46E5), // Indigo
-      const Color(0xFF059669), // Emerald
-      const Color(0xFFD97706), // Amber
-      const Color(0xFFDC2626), // Red
-      const Color(0xFF7C3AED), // Violet
-      const Color(0xFF0891B2), // Cyan
+      const Color(0xFF4F46E5), 
+      const Color(0xFF059669), 
+      const Color(0xFFD97706), 
+      const Color(0xFFDC2626), 
+      const Color(0xFF7C3AED), 
+      const Color(0xFF0891B2), 
     ];
     return colors[index % colors.length];
   }
