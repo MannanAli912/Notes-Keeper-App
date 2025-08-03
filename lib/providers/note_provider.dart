@@ -3,13 +3,11 @@ import '../models/note.dart';
 
 class NoteProvider with ChangeNotifier {
   final List<Note> _notes = [];
-  String _searchQuery = ''; // Added search functionality
+  String _searchQuery = ''; 
 
-  // Get notes with search and pin sorting
   List<Note> get notes {
     List<Note> filteredNotes = _notes;
     
-    // Apply search filter if query exists
     if (_searchQuery.isNotEmpty) {
       filteredNotes = _notes.where((note) =>
         note.title.toLowerCase().contains(_searchQuery.toLowerCase()) ||
@@ -17,7 +15,6 @@ class NoteProvider with ChangeNotifier {
       ).toList();
     }
     
-    // Sort: pinned notes first, then by updated date
     filteredNotes.sort((a, b) {
       if (a.isPinned && !b.isPinned) return -1;
       if (!a.isPinned && b.isPinned) return 1;
@@ -27,14 +24,12 @@ class NoteProvider with ChangeNotifier {
     return filteredNotes;
   }
 
-  // Get all notes without filtering (for internal use)
   List<Note> get allNotes => List.unmodifiable(_notes);
 
   int get notesCount => _notes.length;
   
-  String get searchQuery => _searchQuery; // Getter for search query
+  String get searchQuery => _searchQuery; 
 
-  // Search functionality
   void setSearchQuery(String query) {
     _searchQuery = query;
     notifyListeners();
@@ -69,7 +64,6 @@ class NoteProvider with ChangeNotifier {
     }
   }
 
-  // Pin/Unpin functionality
   void togglePinNote(String id) {
     final index = _notes.indexWhere((note) => note.id == id);
     if (index != -1) {
