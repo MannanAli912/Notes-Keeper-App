@@ -52,7 +52,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Column(
         children: [
-          // Search Bar Section
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
@@ -68,7 +67,6 @@ class _HomeScreenState extends State<HomeScreen> {
             child: _buildSearchBar(theme),
           ),
 
-          // Notes List
           Expanded(
             child: Consumer<NoteProvider>(
               builder: (context, noteProvider, child) {
