@@ -4,7 +4,7 @@ class Note {
   String description;
   DateTime createdAt;
   DateTime updatedAt;
-  bool isPinned; // Added pin functionality
+  bool isPinned; 
 
   Note({
     required this.id,
@@ -12,14 +12,14 @@ class Note {
     required this.description,
     required this.createdAt,
     required this.updatedAt,
-    this.isPinned = false, // Default to not pinned
+    this.isPinned = false, 
   });
 
   Note copyWith({
     String? title,
     String? description,
     DateTime? updatedAt,
-    bool? isPinned, // Added pin parameter
+    bool? isPinned, 
   }) {
     return Note(
       id: id,
@@ -27,7 +27,7 @@ class Note {
       description: description ?? this.description,
       createdAt: createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
-      isPinned: isPinned ?? this.isPinned, // Handle pin state
+      isPinned: isPinned ?? this.isPinned,
     );
   }
 
